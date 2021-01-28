@@ -41,26 +41,27 @@ public class Task01Tests {
 
         SqlSession session1 = sqlSessionFactory.openSession();
         SqlSession session2 = sqlSessionFactory.openSession();
-        //SqlSession session3 = sqlSessionFactory.openSession(false);
+        SqlSession session3 = sqlSessionFactory.openSession();
+
         UserMapper m1 = session1.getMapper(UserMapper.class);
         UserMapper m2 = session2.getMapper(UserMapper.class);
-        //UserMapper m3 = session2.getMapper(UserMapper.class);
+        UserMapper m3 = session2.getMapper(UserMapper.class);
 
         // first select
         User user1 = m1.findOne(1L);
         session1.close();
 
         // update
-//        User user = new User();
-//        user.setId(2L);
-//        user.setUsername("曲子乐3333331111");
-//        int update = m3.update(user);
-//        System.out.println("update:" + update);
-//        session3.close();
+        User user = new User();
+        user.setId(2L);
+        user.setUsername("曲子乐3333331111");
+        int update = m3.update(user);
+        System.out.println("update:" + update);
+        // session3.close();
 
         // second select
         User user2 = m2.findOne(1L);
-        // session2.close();
+        session2.close();
         System.out.println(user1 == user2);
         //
         TimeUnit.SECONDS.sleep(1);
