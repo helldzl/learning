@@ -6,6 +6,10 @@
 <configuration>
     <properties resource="jdbc.properties"/>
 
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
     <typeAliases>
         <package name="com.learning.stage01.lesson01.domain"/>
     </typeAliases>
