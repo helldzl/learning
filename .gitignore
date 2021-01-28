@@ -1,2 +1,5 @@
 # Project exclude paths
-/learning-stage01-lesson01/target/
+/*.iml
+/.idea
+/*/*.iml
+/*/target/
